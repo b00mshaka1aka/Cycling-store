@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-const items = ['Главная', 'Каталог', 'Уроки садоводства', 'Блог'];
+const items = ['Каталог', 'Избранное', 'Корзина'];
 
 const ItemsContainer = styled.div`
   display: flex;

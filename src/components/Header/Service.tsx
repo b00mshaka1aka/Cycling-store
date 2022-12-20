@@ -1,20 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import search from '../../assets/images/search.svg';
-import cart from '../../assets/images/cart.svg';
 import logout from '../../assets/images/logout.svg';
 
 const ServiceContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const ServiceImage = styled.img`
-  padding: 25px 5px;
-  margin: 0 10px;
-  cursor: pointer;
 `;
 
 const ServiceButton = styled.button`
@@ -48,8 +40,6 @@ const ServiceButtonImage = styled.img`
 const HeaderService: React.FC = () => {
   return (
     <ServiceContainer>
-      <ServiceImage src={search} alt="Search" />
-      <ServiceImage src={cart} alt="Cart" />
       <ServiceButton>
         <ServiceButtonContainer>
           <ServiceButtonImage src={logout} alt="Logout" />
