@@ -6,7 +6,7 @@ const MenuContainer = styled.div`
   margin: 0 20px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 `;
 
@@ -64,26 +64,13 @@ const MenuItem = styled.div<MenuProps>`
   }
 `;
 
-const items = ['Все растения', 'Новые', 'Распродажа'];
-const sortingBy = ['цене (возрастанию)', 'цене (убыванию)', 'размеру', 'популярности'];
+const sortingBy = ['цене (возрастанию)', 'цене (убыванию)', 'размеру'];
 
 const Menu: React.FC = () => {
-  const [current, setCurrent] = React.useState<number>(0);
   const [currentSorting, setCurrentSorting] = React.useState<string>(sortingBy[0]);
-
-  const onClickItem = (index: number): void => {
-    setCurrent(index);
-  };
 
   return (
     <MenuContainer>
-      <MenuItems>
-        {items.map((el, index) => (
-          <MenuItem active={index === current} onClick={() => onClickItem(index)}>
-            {el}
-          </MenuItem>
-        ))}
-      </MenuItems>
       <Sorting>
         <UncontrolledDropdown>
           <DropdownToggle caret className="nav-link" tag="a">

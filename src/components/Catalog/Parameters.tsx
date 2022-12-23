@@ -63,25 +63,6 @@ const categories = [
     name: 'Садовые растения',
     count: 13,
   },
-  {
-    name: 'Аксессуары',
-    count: 18,
-  },
-];
-
-const sizes = [
-  {
-    name: 'Маленькие',
-    count: 119,
-  },
-  {
-    name: 'Средние',
-    count: 86,
-  },
-  {
-    name: 'Большие',
-    count: 78,
-  },
 ];
 
 const Parameters: React.FC = () => {
@@ -99,16 +80,7 @@ const Parameters: React.FC = () => {
         onClickItem={onClickItem}
         currentCategory={currentCategory}
       />
-
       <PriceRange />
-
-      <Categories
-        title="Размеры"
-        data={sizes}
-        onClickItem={onClickItem}
-        currentCategory={currentCategory}
-        delta={categories.length}
-      />
     </ParametersContainer>
   );
 };

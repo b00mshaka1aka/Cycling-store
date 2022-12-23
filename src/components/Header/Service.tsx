@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import logout from '../../assets/images/logout.svg';
 
@@ -31,6 +32,8 @@ const ServiceButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  color: #fff;
 `;
 
 const ServiceButtonImage = styled.img`
@@ -40,12 +43,14 @@ const ServiceButtonImage = styled.img`
 const HeaderService: React.FC = () => {
   return (
     <ServiceContainer>
-      <ServiceButton>
-        <ServiceButtonContainer>
-          <ServiceButtonImage src={logout} alt="Logout" />
-          Войти
-        </ServiceButtonContainer>
-      </ServiceButton>
+      <Link style={{ textDecoration: 'none' }} to={'/auth'}>
+        <ServiceButton>
+          <ServiceButtonContainer>
+            <ServiceButtonImage src={logout} alt="Logout" />
+            Войти
+          </ServiceButtonContainer>
+        </ServiceButton>
+      </Link>
     </ServiceContainer>
   );
 };

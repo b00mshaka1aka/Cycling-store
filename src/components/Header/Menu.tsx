@@ -1,7 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const items = ['Каталог', 'Избранное', 'Корзина'];
+import { RootState } from '../../store';
+import { useSelector, useDispatch } from 'react-redux';
+import { change } from '../../features/currentPage';
+
+const items = ['Каталог', 'Корзина'];
+const itemLinks = ['', 'cart'];
 
 const ItemsContainer = styled.div`
   display: flex;
@@ -48,18 +54,25 @@ const Item = styled.div<ItemProps>`
 `;
 
 const HeaderMenu: React.FC = () => {
-  const [current, setCurrent] = React.useState<number>(0);
+  const currentPage = useSelector((state: RootState) => state.currentPage.value);
+  const dispatch = useDispatch();
+  console.log(currentPage);
+
+  const [current, setCurrent] = React.useState<number>(currentPage);
 
   const onClickItem = (index: number): void => {
+    dispatch(change(index));
     setCurrent(index);
   };
 
   return (
     <ItemsContainer>
       {items.map((el, index) => (
-        <Item active={index === current} key={el} onClick={() => onClickItem(index)}>
-          {el}
-        </Item>
+        <Link key={el} style={{ textDecoration: 'none' }} to={'/' + itemLinks[index]}>
+          <Item active={index === current} onClick={() => onClickItem(index)}>
+            {el}
+          </Item>
+        </Link>
       ))}
     </ItemsContainer>
   );

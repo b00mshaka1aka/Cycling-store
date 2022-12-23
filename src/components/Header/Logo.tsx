@@ -8,7 +8,6 @@ const LogoContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  cursor: pointer;
   user-select: none;
 `;
 

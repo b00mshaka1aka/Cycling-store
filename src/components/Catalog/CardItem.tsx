@@ -95,14 +95,9 @@ const CardItem: React.FC = () => {
       <CardItemImage className="img-fluid" src={plantImage} alt="Card plant" />
       <CardItemTitle>Barberton Daisy</CardItemTitle>
       <CardItemCost>$119.00</CardItemCost>
-      <CardItemButtonsContainer>
-        <CardItemButton>
-          <img className="img-fluid" src={heart} alt="Heart" />
-        </CardItemButton>
-        <CardItemButton>
-          <img className="img-fluid" src={cart} alt="Cart" />
-        </CardItemButton>
-      </CardItemButtonsContainer>
+      <CardItemButton>
+        <img className="img-fluid" src={cart} alt="Cart" />
+      </CardItemButton>
     </CardItemContainer>
   );
 };
